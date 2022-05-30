@@ -1,5 +1,5 @@
 import logo from "./logo.svg";
-import "./App.css";
+// import "./App.css";
 
 import { connect } from "react-redux";
 import {
@@ -10,6 +10,7 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { useEffect } from "react";
+import Home from "./components/Home";
 
 function App() {
   const newCount = useSelector((state) => state.counter.count);
@@ -20,30 +21,23 @@ function App() {
   const handleIncrease = () => {
     dispatch(increaseCounter());
   };
-  const fetchAllUser = async () => {
-    const res = await axios.get("http://localhost:8080/users/all");
-    const data = res && res.data ? res.data : [];
-    console.log("check data axios", data);
-  };
 
-  useEffect(() => {
-    fetchAllUser();
-  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <div>Hello world with React and {name} </div>
-        <div>Count: {newCount}</div>
-        <button onClick={() => handleIncrease()}>Increase Count</button>
-        <button onClick={() => dispatch(decreaseCounter())}>
-          Decrease Count
-        </button>
-        <button onClick={() => dispatch(multiplicationCounter())}>
-          Multiplication Count
-        </button>
-      </header>
-    </div>
+    // <div className="App">
+    //   <header className="App-header">
+    //     <img src={logo} className="App-logo" alt="logo" />
+    //     <div>Hello world with React and {name} </div>
+    //     <div>Count: {newCount}</div>
+    //     <button onClick={() => handleIncrease()}>Increase Count</button>
+    //     <button onClick={() => dispatch(decreaseCounter())}>
+    //       Decrease Count
+    //     </button>
+    //     <button onClick={() => dispatch(multiplicationCounter())}>
+    //       Multiplication Count
+    //     </button>
+    //   </header>
+    // </div>
+    <Home />
   );
 }
 

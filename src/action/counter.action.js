@@ -18,3 +18,7 @@ export const multiplicationCounter = () => {
     type: MULTIPLICATION,
   };
 };
+
+export const fetchAllUsers = () => {
+  return (dispatch, getState) => {};
+};
