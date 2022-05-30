@@ -1,8 +1,9 @@
-import { INCREMENT, DECREMENT, multiplication } from "../action/counter.types";
+import { INCREMENT, DECREMENT, MULTIPLICATION } from "../action/counter.types";
 
 export const increaseCounter = () => {
   return {
     type: INCREMENT,
+    payload: ["buy milk", "buy ban11"],
   };
 };
 
@@ -14,6 +15,6 @@ export const decreaseCounter = () => {
 
 export const multiplicationCounter = () => {
   return {
-    type: multiplication,
+    type: MULTIPLICATION,
   };
 };

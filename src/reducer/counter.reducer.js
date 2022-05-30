@@ -1,23 +1,27 @@
-import { INCREMENT, DECREMENT, multiplication } from "../action/counter.types";
+import { INCREMENT, DECREMENT, MULTIPLICATION } from "../action/counter.types";
 
 const INITIAL_STATE = {
-  count: 1,
+  count: 0,
+  name: "Eric",
 };
 
-const reducer = (state = INITIAL_STATE, action) => {
+const counterReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case INCREMENT:
+      console.log("run INCREMENT");
       return {
         ...state,
         count: state.count + 1,
       };
 
     case DECREMENT:
+      console.log("run DECREMENT");
+
       return {
         ...state,
         count: state.count - 1,
       };
-    case multiplication:
+    case MULTIPLICATION:
       return {
         ...state,
         count: state.count * 2,
@@ -28,4 +32,4 @@ const reducer = (state = INITIAL_STATE, action) => {
   }
 };
 
-export default reducer;
+export default counterReducer;
